@@ -11,21 +11,21 @@ Orderman is a very simple order tracking system developed using HTML, CSS, JavaS
 
 ## TECH STACK USED TO DEVELOPE ORDERMAN
 
-For frontend
+FRONTEND
 - HTML
 - CSS
 - JavaScript
 - JQuery
 - Twitter Boostrap
 
-For backend
+BACKEND (SERVER)
 - PHP 
 
 
 ## HOW TO SETUP ORDERMAN
 
 - Ensure you have php setup
-- Download / clone the code via the [https://github.com/bosz/orderman](link)   
+- Download / clone the code on the [Order man repo](https://github.com/bosz/orderman)   
 - run `php -S localhost:8111` to power up the server
 - open your browser and type [http://localhost:8111](http://localhost:8111)  
 - You will be served with the output as below
@@ -33,7 +33,7 @@ For backend
 
 ## ORDERMAN INTERFACE
 
-- ![Order man interface](screenshot.png?raw=true "Order man interface")
+![Order man interface](screenshot.png?raw=true "Order man interface")
 
 ## REPORT ISSUE
 
