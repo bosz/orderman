@@ -16,10 +16,11 @@
 
 
         <section class="container card p-3 mb-5">
-            <h2>ADD NEW ITEM</h2>
+            <h2 id="add-order-heading">ADD /EDIT ITEM <a class="d-none text text-danger" id="cancel-editing">Cancel editing</a> </h2>
             <form id="newItemForm">
                 <p class="text-danger" id="form-error"></p>
                 <div class="row">
+                    <input type="hidden" readonly id="orderId" class="form-control mb-2">
                     <div class="col-4">
                         <label for="productName">Product name</label>
                         <input autofocus type="text" id="productName" class="form-control">
@@ -36,10 +37,11 @@
                         <span class="text-danger" id="pricePerItemError"></span>
                     </div>
                     <div class="col-2">
-                        <button type="submit" class="h-100 btn btn-block btn-primary">Submit</button>
+                        <button type="submit" class="h-100 btn btn-block btn-primary" id="add-item-submit-btn">Submit</button>
                     </div>
                 </div>
             </form>
+            
         </section>
 
         <section id="table-container" class=" container card p-3 mb-5">
@@ -52,6 +54,7 @@
                         <th>Price per item</th>
                         <th>Datetime submitted</th>
                         <th>Total value number</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,6 +67,7 @@
                         <td> --- </td>
                         <td> --- </td>
                         <td id="total-total-value-number"></td>
+                        <td>--- </td>
                     </tr>
                 </tfoot>
             </table>
