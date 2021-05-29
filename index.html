@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Order man | Fongoh Martin</title>
+  </head>
+  <body>
+      <div class="text-center mb-3 p-4 bg-primary text-white">
+          <h1>Welcome to OrderMan</h1>
+      </div>
+
+
+        <section class="container card p-3 mb-5">
+            <h2>ADD NEW ITEM</h2>
+            <form id="newItemForm">
+                <p class="text-danger" id="form-error"></p>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="productName">Product name</label>
+                        <input autofocus type="text" id="productName" class="form-control">
+                        <span class="text-danger" id="productNameError"></span>
+                    </div>
+                    <div class="col-3">
+                        <label for="quantityInStock">Quantity in stock</label>
+                        <input type="number" id="quantityInStock" class="form-control">
+                        <span class="text-danger" id="quantityInStockError"></span>
+                    </div>
+                    <div class="col-3">
+                        <label for="pricePerItem">Price per item</label>
+                        <input type="text" id="pricePerItem" class="form-control">
+                        <span class="text-danger" id="pricePerItemError"></span>
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="h-100 btn btn-block btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section id="table-container" class=" container card p-3 mb-5">
+            <h2>MY LIST OF ITEMS</h2>
+            <table id="orders-table" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product name</th>
+                        <th>Quantity in stock</th>
+                        <th>Price per item</th>
+                        <th>Datetime submitted</th>
+                        <th>Total value number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </section>
+
+        <footer class=" p-5 bg-dark text-white">
+            <div class="row">
+                <div class="col-3">
+                    <h3 class="mb-3">Brief about</h3>
+                    <p class="">Orderman is a very simple order tracking system developed using HTML, CSS, JavaScript, Jquery and Twitter Bootstrap and PHP</p>
+                </div>
+                <div class="col-5">
+                    <h3 class="mb-3">How it works</h3>
+                    <ol>
+                        <li>
+                            <p class="pb-2">With order man, the user to add new order items to the list. The data is submitted via an ajax call and stored in a json file. </p>
+                        </li>
+                        <li>
+                            <p class="pb-2">To ensure the user knows what's in his/her json db, each time the user reloads the screen, the data is loaded from the json file through ajax.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-3">
+                    <h3 class="mb-3">Contact</h3>
+                    <ul>
+                        <li>
+                            <p class="m-0">Phone: +237679574561</p>
+                        </li>
+                        <li>
+                            <p class="m-0">Email: fongohmartin@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <p class="text-center mt-3 m-0 text-white">Developed by <a href="mailto:fongohmartin@gmail.com">Fongoh M. Tayong</a> </p>
+        </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
