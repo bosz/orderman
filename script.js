@@ -22,21 +22,26 @@
         console.log('called', totalStock, totalValue);
     }
 
+
+    function generateRow(result) {
+        return `<tr>
+                    <td>${result.productName}</td>
+                    <td class="quantity-in-stock">${result.quantityInStock}</td>
+                    <td>${result.pricePerItem}</td>
+                    <td>${result.dateSubmitted}</td>
+                    <td class="total-value-number">${result.totalValueNumber}</td>
+                </tr>
+            `
+    }
+
+
     $.ajax({
         type: 'GET', 
         url: 'read.php',
         success: function(results) {
             if (results.length) {
                 results.forEach(result => {
-                    $('#orders-table tbody').append(`
-                        <tr>
-                            <td>${result.productName}</td>
-                            <td class="quantity-in-stock">${result.quantityInStock}</td>
-                            <td>${result.pricePerItem}</td>
-                            <td>${result.dateSubmitted}</td>
-                            <td class="total-value-number">${result.totalValueNumber}</td>
-                        </tr>
-                    `);
+                    $('#orders-table tbody').append(generateRow(result));
                 });
 
                 calculateTotals()
@@ -84,15 +89,7 @@
             data: data,
             success: function(result) {
                 console.log('Result is ',result)
-                $('#orders-table tbody').append(`
-                    <tr>
-                        <td>${result.productName}</td>
-                        <td class="quantity-in-stock">${result.quantityInStock}</td>
-                        <td>${result.pricePerItem}</td>
-                        <td>${result.dateSubmitted}</td>
-                        <td class="total-value-number">${result.totalValueNumber}</td>
-                    </tr>
-                `);
+                $('#orders-table tbody').append(generateRow(result));
 
                 $('#productName, #quantityInStock, #pricePerItem').val('');
                 alert('data inputed succesfully');
