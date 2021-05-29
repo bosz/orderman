@@ -1,5 +1,27 @@
 
 (function($) {
+
+    function calculateTotals(){
+
+        let totalStock = 0;
+        let totalValue = 0;
+
+        // STOCKS
+        
+        $('.quantity-in-stock').each(function(i, obj) {
+            totalStock += parseInt($(this).html());
+            $('#total-quantity-in-stock').html(totalStock);
+        });
+
+        // TOTAL QTY
+        $('.total-value-number').each(function(i, obj) {
+            totalValue += parseInt($(this).html());
+            $('#total-total-value-number').html(totalValue);
+        });
+
+        console.log('called', totalStock, totalValue);
+    }
+
     $.ajax({
         type: 'GET', 
         url: 'read.php',
@@ -9,13 +31,15 @@
                     $('#orders-table tbody').append(`
                         <tr>
                             <td>${result.productName}</td>
-                            <td>${result.quantityInStock}</td>
+                            <td class="quantity-in-stock">${result.quantityInStock}</td>
                             <td>${result.pricePerItem}</td>
                             <td>${result.dateSubmitted}</td>
-                            <td>${result.totalValueNumber}</td>
+                            <td class="total-value-number">${result.totalValueNumber}</td>
                         </tr>
                     `);
                 });
+
+                calculateTotals()
             }
         }
     })
@@ -63,15 +87,16 @@
                 $('#orders-table tbody').append(`
                     <tr>
                         <td>${result.productName}</td>
-                        <td>${result.quantityInStock}</td>
+                        <td class="quantity-in-stock">${result.quantityInStock}</td>
                         <td>${result.pricePerItem}</td>
                         <td>${result.dateSubmitted}</td>
-                        <td>${result.totalValueNumber}</td>
+                        <td class="total-value-number">${result.totalValueNumber}</td>
                     </tr>
                 `);
 
                 $('#productName, #quantityInStock, #pricePerItem').val('');
                 alert('data inputed succesfully');
+                calculateTotals();
             },
             error: function(error) {
                 console.error('Error raised', error)
