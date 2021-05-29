@@ -21,6 +21,13 @@ FRONTEND
 BACKEND (SERVER)
 - PHP 
 
+## FEATURES
+
+- Add new item
+- Edit item
+- View list of items
+
+
 
 ## HOW TO SETUP ORDERMAN
 
